@@ -1,0 +1,260 @@
+body {
+  margin: 0;
+  padding-top: 70px;
+}
+
+/* General Header Styles */
+header {
+  position: fixed; /* Make the header fixed */
+  top: 0; /* Position it at the top */
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure it stays above other elements */
+  background-color: #2E2E2E; /* Black background for the header */
+  padding: 15px 30px;
+  color: #fff; /* White text */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Optional shadow for separation */
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between; /* Align logo, nav, and icons */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo Styles */
+.logo img {
+  max-height: 50px; /* Adjust logo size */
+}
+
+/* Navigation Links */
+.nav-links ul {
+  display: flex;
+  gap: 50px;
+  list-style: none;
+  margin: 0;
+}
+
+.nav-links a {
+  font-family: 'Montserrat', sans-serif; /* Modern, bold font */
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block; /* Ensure the link can scale */
+  transform-origin: center; /* Ensure scaling is centered */
+  position: relative; /* To position the pseudo-element */
+}
+
+.nav-links a:hover {
+  color: #FF3B30; /* Red color on hover */
+  transform: scale(1.2); /* Slight scaling effect */
+}
+
+/* Add underline under the links on hover */
+.nav-links a::after {
+  content: ''; /* Empty content for the pseudo-element */
+  position: absolute; /* Position it below the link */
+  bottom: -10px; /* Align it at the bottom of the link */
+  left: 0;
+  width: 0; /* Start with width 0 */
+  height: 3px; /* Line thickness */
+  background-color: #FF3B30; /* Red color for the underline */
+  transition: width 0.3s ease; /* Smooth transition for the underline */
+}
+
+/* Expand the underline when the link is hovered */
+.nav-links a:hover::after {
+  width: 100%; /* Expand to full width of the link */
+}
+
+.nav-links a.active {
+  color: #FF3B30; /* Red to indicate active page */
+  text-decoration: underline;
+}
+
+
+/* Header Icons */
+.header-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.header-icons a {
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.header-icons a:hover {
+  color: #FF3B30; /* Red color on hover */
+  transform: scale(1.2); /* Slight scaling effect */
+}
+
+/* Search icon */
+.search-icon {
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hidden search input box */
+.search-box {
+  display: none; /* Hide the search box by default */
+  position: relative;
+}
+
+.search-box input {
+  padding: 5px 30px 5px 10px;
+  font-size: 16px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+.search-box button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #FF3B30;
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.search-box button:hover {
+  color: #000;
+}
+
+/* When search input is active */
+.search-box.active {
+  display: block; /* Show the input box */
+}
+
+.search-box.active input {
+  width: 200px; /* Adjust width for the input field */
+  transition: width 0.3s ease;
+}
+
+.cart-icon {
+  position: relative;
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Cart quantity badge */
+.cart-quantity {
+  position: absolute;
+  top: -12px;
+  right: -10px;
+  background-color: #FF3B30; /* Red badge color */
+  color: #fff;
+  font-size: 12px; /* Small font for the quantity */
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 2px 0px;
+  min-width: 20px; /* Ensure the badge is large enough to fit the number */
+  text-align: center;
+  display: inline-block;
+}
+
+/* Optional hover effect for cart icon */
+.cart-icon:hover .cart-quantity {
+  background-color: #333; /* Darker background when hovering */
+}
+
+/* Hamburger Icon (visible on small screens) */
+.hamburger-icon {
+  display: none; /* Hidden by default, shown on small screens */
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Social Media Icons under the nav links */
+.social-media {
+  margin-top: 20px; /* Space above the icons */
+  display: none;
+  justify-content: center; /* Center the icons */
+  gap: 25px; /* Space between icons */
+}
+
+.social-media a {
+  color: #fff; /* White icons */
+  font-size: 20px; /* Adjust icon size */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+  text-decoration: none;
+}
+
+.social-media a:hover {
+  color: #FF3B30; /* Red color on hover */
+  transform: scale(1.2); /* Slightly enlarge the icon on hover */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hamburger-icon {
+    display: block; /* Show the hamburger icon on small screens */
+  }
+
+  .logo {
+    order: 1; /* Move the logo to the right */
+  }
+
+  .nav-links {
+    display: none; /* Hide the nav links by default */
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #2E2E2E;
+    padding: 20px 0; /* Add padding for space around the links */
+    text-align: center;
+    z-index: 1000; /* Ensure it appears above other content */
+  }
+
+  .nav-links.active {
+    display: block; /* Show the nav links when active */
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    gap: 20px; /* Add space between links */
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links ul li {
+    width: 100%; /* Ensure links span the full width */
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 10px 0; /* Add padding to each link for better spacing */
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px; /* Slightly larger font for better readability */
+  }
+
+  .header-icons {
+    order: 2; /* Keep search and cart icons to the right */
+    margin-left: auto;
+  }
+
+  .social-media {
+    display: flex;
+  }
+}
+

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>American Wolf - Protein Supplements</title>
+  <!-- Font Awesome CDN link -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/header_style.css">
+  <link rel="stylesheet" href="css/hero_section.css">
+  <link rel="stylesheet" href="css/products_section.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+
+       <!-- Hamburger Icon (for small screens) -->
+    <div class="hamburger-icon" onclick="toggleNav();">
+      <i class="fas fa-bars"></i> <!-- Hamburger icon -->
+    </div>
+
+      <!-- Logo on the left -->
+      <div class="logo">
+        <img src="https://americanwolf.net/wp-content/uploads/2024/09/americanwolflogo.png" alt="Your Logo">
+      </div>
+  
+      <!-- Navigation links in the middle -->
+      <nav class="nav-links">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+
+        <!-- Social Media Icons -->
+        <div class="social-media">
+          <a href="https://www.facebook.com/yourbrand" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/yourbrand" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </nav>
+  
+       <!-- Cart and Search icons on the right -->
+    <div class="header-icons">
+      <a href="#" class="search-icon" onclick="toggleSearch();"><i class="fas fa-search"></i></a>
+      <div class="search-box">
+        <input type="text" placeholder="Search..." id="searchInput">
+        <button class="close-btn" onclick="toggleSearch();">X</button>
+      </div>
+      <a href="#" class="cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-quantity" id="cartQuantity">0</span> <!-- Quantity badge -->
+      </a>
+    </div>
+
+    </div>
+  </header>
+
+
+
+
+  <section class="hero">
+    <div class="slider">
+      <!-- Slide 1 -->
+      <div class="slide active">
+        <img src="images/hero/07b70d4a-4888-4b30-8450-2eacbf304f3b.webp" alt="Promotion 1">
+        <div class="text-content">
+          <h1>Exclusive Protein Deals!</h1>
+          <p>Boost your fitness goals with up to 30% off.</p>
+          <a href="#shop" class="btn">Shop Now</a>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="slide">
+        <img src="images/hero/8f73c0e8-73b9-4ad4-b6bb-a0ff797a6fd0.webp" alt="Promotion 2">
+        <div class="text-content">
+          <h1>Fuel Your Workout</h1>
+          <p>Premium protein supplements for every athlete.</p>
+          <a href="#shop" class="btn">Shop Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Dots -->
+  <div class="dots-container">
+    <span class="dot active" onclick="changeSlideTo(0)"></span>
+    <span class="dot" onclick="changeSlideTo(1)"></span>
+  </div>
+
+    <!-- Navigation Arrows -->
+    <div class="nav-arrows">
+      <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+      <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+  </section>
+
+  <section class="products">
+    <div class="container">
+      <h1>Our Products</h1>
+      
+      <!-- Category Navigation -->
+      <div class="category-nav">
+        <button class="category-btn active" onclick="filterProducts('bestsellers')">Bestsellers</button>
+        <button class="category-btn" onclick="filterProducts('protein')">Protein</button>
+        <button class="category-btn" onclick="filterProducts('pre-workout')">Pre-Workout</button>
+        <button class="category-btn" onclick="filterProducts('clothing')">Clothing</button>
+      </div>
+      
+      <!-- Product Grid -->
+      <div class="product-grid">
+        <!-- Products will be dynamically inserted here -->
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  <script src="scripts/header_scripts.js"></script>
+  <script src="scripts/hero_section_scripts.js"></script>
+  <script src="scripts/products_section.js"></script>
+</body>
+</html>
